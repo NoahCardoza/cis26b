@@ -1,0 +1,152 @@
+
+/***
+CIS 26B: Homework 1B
+********************
+NAME: Noah Cardoza
+IDE (compiler): Xcode (gcc)
+*************************************************************************
+
+Review: Functions, Structures, Pointers, Arrays, Sorting, Data Files,
+and Dynamic Allocation of Memory
+
+Create and process a dynamically allocated array of structures
+Save the output as a comment at the end of the program!
+*/
+
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifdef _MSC_VER
+#include <crtdbg.h>  // needed to check for memory leaks (Windows only!)
+#endif
+
+
+typedef struct {
+char symbol[25];
+int shares;
+} COMPANY;
+
+
+
+/* ========================================================
+Allocates and initializes a new NODE type
+========================================================
+> Pre -
+*symbol : used to initialize the symbol property
+shares  : used to initialize the shares property
+> Post -
+Returns a new NODE
+*/
+
+void swap(COMPANY *a, COMPANY *b){
+COMPANY temp = *a;
+*a = *b;
+*b = temp;
+}
+
+void insertCompany(COMPANY *companies, int end) {
+for (int i = end; i > 0; i--) {
+if (strcmp(companies[i - 1].symbol, companies[i].symbol) > 0) {
+swap(companies + i - 1, companies + i);
+}
+}
+}
+
+int readStocksFile(char *in, COMPANY **cpmms) {
+int records;
+FILE *inf;
+COMPANY *companies;
+
+inf = fopen(in, "r");
+
+if (!inf) {
+return 0;
+}
+
+fscanf(inf, "%d", &records);
+companies = (COMPANY*) calloc(records, sizeof(COMPANY));
+
+for (int i = 0; i < records; i++) {
+fscanf(inf, "%s", companies[i].symbol);
+fscanf(inf, "%d", &companies[i].shares);
+insertCompany(companies, i);
+}
+
+fclose(inf);
+
+*cpmms = companies;
+
+return records;
+}
+
+void printStocksList(FILE *fd, COMPANY *companies, int records, int header) {
+int totalShares = 0;
+
+if (header) {
+fprintf(fd, "Symbol    Shares\n");
+}
+
+for (int i = 0; i < records; i++) {
+totalShares = companies[i].shares;
+while (i + 1 < records && !strcmp(companies[i].symbol, companies[i + 1].symbol)) {
+totalShares += companies[++i].shares;
+}
+fprintf(fd, "%-10s%d\n", companies[i].symbol, totalShares);
+}
+}
+
+char *my_getline(FILE *fd) {
+char *ret;
+ssize_t chars;
+size_t bufsize = 32;
+
+chars = getline(&ret, &bufsize, fd);
+ret[chars - 1] = 0;
+if (*ret == 0) {
+free(ret);
+return NULL;
+}
+return ret;
+}
+
+void *select_or(void *a, void *b) {
+if (a) return a;
+return b;
+}
+
+int main(void) {
+const char *DEFAULT_IFILE = "in.txt";
+const char *DEFAULT_OFILE = "out.txt";
+
+COMPANY *companies;
+char *ifile, *ofile;
+FILE *fout;
+
+printf("Input File: ");
+ifile = select_or(my_getline(stdin), (void*) DEFAULT_IFILE);
+printf("Output File: ");
+ofile = select_or(my_getline(stdin), (void*) DEFAULT_OFILE);
+
+int records = readStocksFile("in.txt", &companies);
+
+// prove sort works
+printStocksList(stdout, companies, records, 1);
+
+// Save results to file
+fout = fopen(ofile, "w");
+printStocksList(fout, companies, records, 0);
+fclose(fout);
+
+// free all malloced memory
+free(companies);
+if (ifile != DEFAULT_IFILE) free(ifile);
+if (ofile != DEFAULT_OFILE) free(ofile);
+
+#ifdef _MSC_VER
+printf( _CrtDumpMemoryLeaks() ? "Memory Leak\n" : "No Memory Leak\n");
+#endif
+
+return 0;
+}
+

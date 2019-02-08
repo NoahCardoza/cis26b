@@ -1,0 +1,221 @@
+//int readStocksFile(char *in, COMPANY **cpmms) {
+//    int records;
+//    FILE *inf;
+//    COMPANY *companies;
+//
+//    inf = fopen(in, "r");
+//    fscanf(inf, "%d", &records);
+//    companies = (COMPANY*) calloc(records, sizeof(COMPANY));
+//
+//    for (int i = 0; i < records; i++) {
+//        fscanf(inf, "%s", companies[i].symbol);
+//        fscanf(inf, "%d", &companies[i].shares);
+//    }
+//
+//    fclose(inf);
+//
+//    *cpmms = companies;
+//
+//    return records;
+//}
+
+//void printStocksList(COMPANY *companies, int records) {
+//    printf("Symbol    Shares\n");
+//    for (int i = 0; i < records; i++) {
+//        printf("%-10s%d\n", companies[i].symbol, companies[i].shares);
+//    }
+//}
+
+
+------------
+
+/***
+CIS 26B: Homework 1B
+********************
+NAME: Noah Cardoza
+IDE (compiler): Xcode (gcc)
+*************************************************************************
+
+Review: Functions, Structures, Pointers, Arrays, Sorting, Data Files,
+and Dynamic Allocation of Memory
+
+Create and process a dynamically allocated array of structures
+Save the output as a comment at the end of the program!
+*/
+
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifdef _MSC_VER
+#include <crtdbg.h>  // needed to check for memory leaks (Windows only!)
+#endif
+
+
+typedef struct {
+char symbol[25];
+int shares;
+} COMPANY;
+
+typedef struct node {
+COMPANY company;
+struct node *next;
+} NODE;
+
+
+/* ========================================================
+Allocates and initializes a new NODE type
+========================================================
+> Pre -
+*symbol : used to initialize the symbol property
+shares  : used to initialize the shares property
+> Post -
+Returns a new NODE
+*/
+
+NODE* newNode(const char* symbol, const int shares) {
+NODE* node;
+
+node = (NODE*) malloc(sizeof(NODE));
+
+strcpy(node->company.symbol, symbol);
+node->company.shares = shares;
+node->next = NULL;
+
+return node;
+}
+
+/* ========================================================
+Inserts a NODE into a string of nodes sorted by `symbol`
+========================================================
+> Pre -
+*symbol  : the first node of the linked list
+*node    : the node to be inserted
+> Post -
+Returns the head node, which could change depending on the sorting
+*/
+
+NODE* insertNode(NODE* head, NODE* node) {
+NODE *link = head, *last;
+int test;
+
+if (!head) return node;
+
+test = strcmp(link->company.symbol, node->company.symbol);
+
+if (!test) {
+link->company.shares += node->company.shares;
+free(node); // free it since we won't be needing it anymore
+return head;
+}
+
+if (test > 0) {
+node->next = link;
+return node;
+}
+
+last = link;
+link = link->next;
+while (link) {
+test = strcmp(link->company.symbol, node->company.symbol);
+
+if (!test) {
+link->company.shares += node->company.shares;
+free(node); // free it since we won't be needing it anymore
+return head;
+}
+
+if (test > 0) {
+last->next = node;
+node->next = link;
+return head;
+}
+
+last = link;
+link = link->next;
+}
+last->next = node;
+return head;
+}
+
+/* ========================================================
+Transverses the linked list freeing it's contents
+========================================================
+> Pre -
+*head  : the first node of the linked list
+> Post -
+N/A
+*/
+
+void freeNodes(NODE *head){
+NODE *temp;
+
+while (head) {
+temp = head;
+head = head->next;
+free(temp);
+}
+}
+
+/* ========================================================
+Prints a table based off the data in the linked list
+========================================================
+> Pre -
+*head  : the first node of the linked list
+> Post -
+N/A
+*/
+
+void printNodes(NODE *head){
+printf("Symbol    Shares\n");
+while (head) {
+printf("%-10s%d\n", head->company.symbol, head->company.shares);
+head = head->next;
+}
+}
+
+/* ========================================================
+Reads the input file into memory
+========================================================
+> Pre -
+*in : path to input file
+> Post -
+Returns the head node to a sorted linked list. DON'T FORGET TO FREE ME
+*/
+
+NODE *readStocksFile(char *in) {
+int records;
+FILE *inf;
+NODE *companies = NULL;
+COMPANY temp;
+
+inf = fopen(in, "r");
+fscanf(inf, "%d", &records);
+
+for (int i = 0; i < records; i++) {
+fscanf(inf, "%s", temp.symbol);
+fscanf(inf, "%d", &temp.shares);
+companies = insertNode(companies, newNode(temp.symbol, temp.shares));
+}
+
+fclose(inf);
+
+return companies;
+}
+
+int main( void )
+{
+NODE *companies = readStocksFile("in.txt");
+
+printNodes(companies);
+
+freeNodes(companies);
+
+#ifdef _MSC_VER
+printf( _CrtDumpMemoryLeaks() ? "Memory Leak\n" : "No Memory Leak\n");
+#endif
+
+return 0;
+}
+
+
