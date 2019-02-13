@@ -46,9 +46,9 @@ PERSON *init_person(char *name, int age){
     return p;
 }
 
-//void freel(int *list) {
-//    free(list);
-//}
+void freel(void *list) {
+    free(list);
+}
 
 int main(int argc, const char * argv[]) {
 //    int *list = malloc(sizeof(int) * 5);
@@ -60,14 +60,18 @@ int main(int argc, const char * argv[]) {
     
 //    int     i;
 //    char    s[21];
-//
+
 //    printf(">");
 //    scanf("%20s %*[^\n] %d", s, &i);
 //    printf("%s %d\n", s, i);
-//    NODE *list = init_node(init_person("Noah", 18));
-//    list->next = init_node(init_person("Joe", 21));
-//
-//    PERSON* p = (PERSON*) list->data;
-//    printf("(name: %s, age: %d)\n", p->name, p->age);
+    NODE *list = init_node(init_person("Noah", 18));
+    list->next = init_node(init_person("Joe", 21));
+
+    PERSON* p = (PERSON*) list->data;
+    printf("(name: %s, age: %d)\n", p->name, p->age);
+    freel(p);
+    free(p);
+    p->age = 5;
+    printf("(name: %s, age: %d)\n", p->name, p->age);
 }
 
