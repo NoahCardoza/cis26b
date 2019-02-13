@@ -4,20 +4,20 @@
  ** Homework 2A:
  **        A Circularly Doubly Linked List of Stacks
  **********************************************************************************
-  Pointers, Stacks & Queues
+ Pointers, Stacks & Queues
  
  There are a number of errors (about 10) in the following program.
  Locate all errors, fix them (as shown below), run the program and save its output.
  Here is an example:
-    int num = 10;
-    int *ptr;
-    num = &ptr; // <== Error: Comment the line and write the correct line below
+ int num = 10;
+ int *ptr;
+ num = &ptr; // <== Error: Comment the line and write the correct line below
  
-    // num = &ptr; // Error #1
-    ptr = &num;
+ // num = &ptr; // Error #1
+ ptr = &num;
  **********************************************************
- **  Written By:
- **  IDE:
+ **  Written By: Noah Cardoza
+ **  IDE: Xcode
  ***************************************************************************/
 #include <stdio.h>
 #include <string.h>
@@ -42,7 +42,9 @@ typedef struct node NODE;
 struct node
 {
     CIS_CLASS   data;
-    struct node next;
+    //  Error #1
+    //  struct node next;
+    struct node *next;
 };
 
 void printClass(const CIS_CLASS *pStu);
@@ -66,10 +68,14 @@ int main (void)
         {"CIS 22A", 8, {1, 3, 5, 6, 7, 8, 61, 63}},
     };
     
-    NODE *stack;
+    //  Error #2
+    //  NODE *stack;
+    NODE *stack = NULL;
     NODE *top = NULL;
     NODE *queue = NULL, *rear = NULL;
-    NODE front;
+    //  Error #3
+    //  NODE *front;
+    NODE *front;
     int i, n, count = 4;
     
     // build stack and queue with data from an array of CIS_CLASS structures
@@ -77,23 +83,39 @@ int main (void)
     for ( n = 0; n < count; n++)
     {
         i = rand() % NUM_CLS;
-        push(stack, &clsList[i]);
-        enqueue(&queue, &rear, clsList[i]);
+        //      Error #4
+        //      push(stack, &clsList[i]);
+        stack = push(stack, &clsList[i]);
+        //      Error #5
+        //      enqueue(&queue, &rear, clsList[i]);
+        enqueue(&queue, &rear, &clsList[i]);
     }
     
     // display stack
     printf("STACK contents from top to bottom:\n");
-    while ((top = pop(stack))) // top != NULL
+    //  Error #6
+    //  while ((top = pop(stack))) // top != NULL
+    while ((top = pop(&stack))) // top != NULL
     {
         printClass(&top->data);
+        //      Error #7
+        //
+        free(top);
     }
     printf("\n\n");
     
     // display queue
     printf("QUEUE contents from front to rear:\n");
-    while ((front = dequeue(queue, rear))) // front != NULL
+    //  Error #8 & #9
+    //  while ((front = dequeue(queue, rear))) // front != NULL
+    while ((front = dequeue(&queue, &rear))) // front != NULL
     {
+        //      Error #10
+        //      printClass(front->data);
         printClass(&front->data);
+        //      Error #11
+        //
+        free(front);
     }
     printf("\n\n");
     
@@ -186,6 +208,18 @@ NODE *dequeue(NODE **queue, NODE **rear)
 
 /*    ================= Sample Output ================= */
 /*    Results:
+ STACK contents from top to bottom:
+ CIS 41A     3
+ CIS 22C     4
+ CIS 29      1
+ CIS 35A     2
+ 
+ 
+ QUEUE contents from front to rear:
+ CIS 35A     2
+ CIS 29      1
+ CIS 22C     4
+ CIS 41A     3
  
  
  */
