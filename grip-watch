@@ -1,0 +1,1 @@
+fswatch *.md | xargs -n1 ./transform.sh
