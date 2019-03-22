@@ -1,0 +1,226 @@
+/************************  Cross Reference Listing  ************************/
+
+Cross reference listing made at: Tuesday, March 19, 21:23:22, 2019
+
+BST_CMP                        :     67   127
+BST_INS                        :     68   128
+BST_IN_ORDER                   :     73   134
+BST_MER                        :     69   129
+BST_NODE                       :     57   122
+BST_PROC                       :     73   134
+NULL                           :     61   109   122
+QUEUE                          :     17    78
+Q_PROC                         :     30   107
+REC                            :     79    81    86    88    98
+                                    106
+VAL                            :     10
+__bst__insert                  :     65   125
+bst__consume                   :    134
+bst__traverse                  :     73
+bst_compare                    :     39    67
+bst_merge                      :     43    69
+bst_process                    :     52    73
+bst_queue_test                 :    113
+bst_test                       :     56
+calloc                         :     88
+compare                        :     81   127
+const                          :    102
+define                         :     10
+existing                       :     39    40
+exiting                        :     43    44    45
+for                            :     23    32    64   124
+free                           :     36   108
+i                              :     23    24    25    64    70
+                                    124   130
+identity                       :     48    68
+if                             :     25
+include                        :      5     6     7     8
+insert                         :     85   128
+int                            :     12    19    23    26    32
+                                     33    39    43    52    59
+                                     64    77    81    85    98
+                                    102   113   115   124   138
+                                 
+j                              :     32
+main                           :    138
+merge                          :     98   129
+n                              :     12    13    19    24    52
+                                     53    59    70    77    81
+                                     82    85    90    93    98
+                                     99   102   103   115   130
+                                 
+new                            :     39    40    43    44    45
+                                 
+print                          :    102   107
+printf                         :     13    26    33    44    53
+                                    103   110
+process                        :    106   134
+q                              :     17    21    24    26    30
+                                     33    36    78    91    93
+                                     99   107
+q_process                      :     12    30
+queue__consume                 :    107
+queue__dequeue                 :     26    33
+queue__enqueue                 :     24    93    99
+queue__init                    :     21    91
+queue__traverse                :     30
+queue_test                     :     16   139
+r                              :     81    82    86    88    90
+                                     91    93    95    98    99
+                                    106   107   108   109
+return                         :     40    49    82    95   141
+                                 
+root                           :     57    61    65    66    73
+                                 
+sizeof                         :     88
+struct                         :     76
+t_record                       :     76
+tree                           :    122   125   126   134
+type                           :     10
+typedef                        :     76
+v                              :     10    48    49
+void                           :     12    16    43    48    52
+                                     56    85    98   102   106
+                                    113   138
+00001 : //
+00002 : // Created by Darwin on 2019-03-13.
+00003 : //
+00004 : 
+00005 : #include <stdio.h>
+00006 : #include <stdlib.h>
+00007 : #include "bst/bst.h"
+00008 : #include "queue/queue.h"
+00009 : 
+00010 : #define VAL(v, type) *((type*)v)
+00011 : 
+00012 : void q_process(int *n) {
+00013 :     printf("q_process: %d\n", *n);
+00014 : }
+00015 : 
+00016 : void queue_test(void) {
+00017 :     QUEUE *q;
+00018 : 
+00019 :     int n[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+00020 : 
+00021 :     q = queue__init();
+00022 : 
+00023 :     for (int i = 0; i < 10; ++i) {
+00024 :         queue__enqueue(q, n + i);
+00025 :         if (i % 2) {
+00026 :             printf("odd(i): %d\n", *((int*)queue__dequeue(q)));
+00027 :         }
+00028 :     }
+00029 : 
+00030 :     queue__traverse(q, (Q_PROC)q_process);
+00031 : 
+00032 :     for (int j = 0; j < 5; ++j) {
+00033 :         printf("(j): %d\n", *((int*)queue__dequeue(q)));
+00034 :     }
+00035 : 
+00036 :     free(q);
+00037 : }
+00038 : 
+00039 : int bst_compare(int *existing, int *new) {
+00040 :     return *new - *existing;
+00041 : }
+00042 : 
+00043 : void bst_merge(int **exiting, int *new) {
+00044 :     printf("duplicate data (%d, %d)\n", **exiting, *new);
+00045 :     **exiting += *new;
+00046 : }
+00047 : 
+00048 : void *identity(void *v) {
+00049 :     return v;
+00050 : }
+00051 : 
+00052 : void bst_process(int *n) {
+00053 :     printf("%d ", *n);
+00054 : }
+00055 : 
+00056 : void bst_test(void) {
+00057 :     BST_NODE *root;
+00058 : 
+00059 :     int n[] = { 25, -7, -7, 20, -9, 0, 3, 6, 90, -50 };
+00060 : 
+00061 :     root = NULL;
+00062 :     //bst_node__init(n);
+00063 : 
+00064 :     for (int i = 0; i < 10; ++i) {
+00065 :         root = __bst__insert(
+00066 :                 root,
+00067 :                 (BST_CMP) bst_compare,
+00068 :                 (BST_INS) identity,
+00069 :                 (BST_MER) bst_merge,
+00070 :                 n + i);
+00071 :     }
+00072 : 
+00073 :     bst__traverse(root, (BST_PROC)bst_process, BST_IN_ORDER);
+00074 : }
+00075 : 
+00076 : typedef struct t_record {
+00077 :     int *n;
+00078 :     QUEUE *q;
+00079 : } REC;
+00080 : 
+00081 : int compare(REC *r, int *n) {
+00082 :     return *n - *r->n;
+00083 : }
+00084 : 
+00085 : void *insert(int *n){
+00086 :     REC *r;
+00087 : 
+00088 :     r = (REC*)calloc(1, sizeof(REC));
+00089 : 
+00090 :     r->n = n;
+00091 :     r->q = queue__init();
+00092 : 
+00093 :     queue__enqueue(r->q, n);
+00094 : 
+00095 :     return r;
+00096 : }
+00097 : 
+00098 : void merge(REC **r, int *n) {
+00099 :     queue__enqueue((*r)->q, n);
+00100 : }
+00101 : 
+00102 : void print(const int *n) {
+00103 :     printf("%d ", *n);
+00104 : }
+00105 : 
+00106 : void process(REC *r) {
+00107 :     queue__consume(&(r->q), (Q_PROC)print);
+00108 :     free(r);
+00109 :     r = NULL;
+00110 :     printf("\n");
+00111 : }
+00112 : 
+00113 : int bst_queue_test(void) {
+00114 : 
+00115 :     int n[] = {
+00116 :             1, 2, 3, 4, 5,
+00117 :             1, 1, 2, 5, 4,
+00118 :             3, 4, 5, 6, 8,
+00119 :             3, 2, 5, 6, 8
+00120 :     };
+00121 : 
+00122 :     BST_NODE *tree = NULL;
+00123 : 
+00124 :     for (int i = 0; i < 20; ++i) {
+00125 :         tree = __bst__insert(
+00126 :                 tree,
+00127 :                 (BST_CMP) compare,
+00128 :                 (BST_INS) insert,
+00129 :                 (BST_MER) merge,
+00130 :                 &n[i]
+00131 :         );
+00132 :     }
+00133 : 
+00134 :     bst__consume(&tree, (BST_PROC)process, BST_IN_ORDER);
+00135 : 
+00136 : }
+00137 : 
+00138 : int main(void) {
+00139 :     queue_test();
+00140 : 
+00141 :     return 0;
+00142 : }

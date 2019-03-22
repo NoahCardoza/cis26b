@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cis26B"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/class" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 class"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="class/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/class" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 class/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec07">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec07" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec07"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec07/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec07" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec07/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05c">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05c" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05c"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05c/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05c" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05c/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw04b">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw04b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw04b"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw04b/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw04b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw04b/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec06">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec06" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec06"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec06/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec06" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec06/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scratch">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/scratch" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 scratch"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="scratch/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/scratch" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 scratch/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05b">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05b"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05b/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05b" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05b/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="he05-bst-queue-tests">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/he05-bst-queue-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 he05-bst-queue-tests"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="he05-bst-queue-tests/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/he05-bst-queue-tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 he05-bst-queue-tests/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05a">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05a"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05a/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05a/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec04">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec04" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec04"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec04/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec04" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec04/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec03">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec03" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec03"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec03/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec03" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec03/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05d">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05d"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ec05d/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/ec05d" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 ec05d/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw05">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw05" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw05"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw05/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw05" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw05/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw04a">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw04a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw04a"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hw04a/fast">
+				<Option output="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/hw04a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw04a/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/noahcardoza/Library/Preferences/CLion2018.3/scratches/scratch.c">
+			<Option target="scratch"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec03/EC_Tables.c">
+			<Option target="ec03"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec04/main.c">
+			<Option target="ec04"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec05/_1_va_arg_largest_1.c">
+			<Option target="ec05a"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec05/_2_va_arg_largest_2.c">
+			<Option target="ec05b"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec05/_3_va_arg_strings_1.c">
+			<Option target="ec05c"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec05/_4_va_arg_avg.c">
+			<Option target="ec05d"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec06/main.c">
+			<Option target="ec06"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/ec07/main.c">
+			<Option target="ec07"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw04/a/26B_Hw_4A.c">
+			<Option target="hw04a"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw04/b/26B_Hw_4B.c">
+			<Option target="hw04b"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/lib/bst/bst.c">
+			<Option target="he05-bst-queue-tests"/>
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/lib/bst/bst.h">
+			<Option target="he05-bst-queue-tests"/>
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/lib/queue/queue.c">
+			<Option target="he05-bst-queue-tests"/>
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/lib/queue/queue.h">
+			<Option target="he05-bst-queue-tests"/>
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/other/bst_queue.test.c">
+			<Option target="he05-bst-queue-tests"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/src/main.c">
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/src/parser.c">
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/hw05/src/parser.h">
+			<Option target="hw05"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/main.c">
+			<Option target="class"/>
+		</Unit>
+		<Unit filename="/Users/noahcardoza/projects/c/cis26b/clion/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

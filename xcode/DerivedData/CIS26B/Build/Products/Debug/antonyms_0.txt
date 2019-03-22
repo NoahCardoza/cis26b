@@ -1,0 +1,7 @@
+6
+happy sad
+ugly  attractive
+nice  rude
+cold  warmth
+fast  slow
+new   old

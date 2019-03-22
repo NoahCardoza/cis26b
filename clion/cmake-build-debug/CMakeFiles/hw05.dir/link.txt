@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/hw05.dir/hw05/src/main.c.o CMakeFiles/hw05.dir/hw05/lib/bst/bst.c.o CMakeFiles/hw05.dir/hw05/lib/queue/queue.c.o CMakeFiles/hw05.dir/hw05/src/parser.c.o  -o hw05 

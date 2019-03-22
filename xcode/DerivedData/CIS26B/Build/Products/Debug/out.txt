@@ -1,0 +1,13 @@
+AAL       369
+AAPL      2879
+BBBY      471
+CHTR      423
+EBAY      899
+GOOG      123
+GOOGL     123
+MSFT      380
+NLFX      1474
+SIRI      1908
+TSLA      1383
+XLNX      350
+YHOO      458

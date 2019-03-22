@@ -1,0 +1,46 @@
+/*typedef struct t_point {
+  int x;
+  int y;
+} POINT;*/
+/*
+int max_s(int original, int new, int px, int py, POINT *points, int i) {
+    if (new > original) {
+      points[i].x = px;
+      points[i].y = py;
+      return new;
+    }
+    return original;
+}*/
+
+/*int max_(int x, int y, int *max_index) {
+    *max_index = 0;
+    if (x > y) return x;
+    *max_index = 1;
+    return y;
+}*/
+// int path_finder(int *table, int row, int col) {
+//     static int depth = -1;
+//     static POINT stack[MAX_DEPTH] = { 0 };
+//     if (depth == -1) depth = row;
+//     if (row < 0 || col < 0 || col > row) return 0;
+//     int max_val = 0;
+//
+//     while (col >= 0) {
+//         int data = GETTER(table, row, col);
+//         printf("(%d, %d)[%d] ", row, col, data);
+//         max_val = max_s(max_val, data + max(calc(table, row - 1, col - 1), path_finder(table, row - 1, col)), row, col, stack, row);
+//         col--;
+//     }
+//     col++;
+//     printf("\n| %d (%d, %d)\n", max_val, row, col);
+//     if (row == depth) {
+//       for (int i = 0; i <= depth; i++) {
+//         printf("(%d,%d)", stack[i].x, stack[i].y);
+//         if (i != depth) printf("->");
+//       }
+//       printf("\n");
+//       depth = -1;
+//     }
+//     return max_val;
+// }
+

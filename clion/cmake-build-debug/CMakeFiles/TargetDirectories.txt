@@ -1,0 +1,16 @@
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/class.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec07.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec05c.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/hw04b.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec06.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/scratch.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec05b.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/he05-bst-queue-tests.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec05a.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec04.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec03.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/ec05d.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/hw05.dir
+/Users/noahcardoza/projects/c/cis26b/clion/cmake-build-debug/CMakeFiles/hw04a.dir

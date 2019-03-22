@@ -1,0 +1,8 @@
+7
+left right
+right wrong
+big small
+big little
+large small
+large little
+little much

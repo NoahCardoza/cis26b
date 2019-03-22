@@ -1,0 +1,318 @@
+/************************  Cross Reference Listing  ************************/
+
+Cross reference listing made at: Tuesday, March 19, 21:23:06, 2019
+
+BUCKETSIZE                     :     13    64    75   135   141
+                                    154   181   187   198
+FILE                           :     28    29    31    60    62
+                                     95    97    98   127   176
+                                 
+FILENAME                       :     10    33
+INSERT                         :     14    34
+NULL                           :     67
+OFLOWSIZE                      :     12    65    81   155   199
+                                 
+RECORD                         :     17    64    65    75    81
+                                    129   135   143   146   147
+                                    154   157   160   161   178
+                                    181   189   198   201
+SEARCH                         :     15    35
+SEEK_CUR                       :    146   160
+SEEK_SET                       :    135   154   181   198
+TABSIZE                        :     11    64    75   154   198
+                                 
+address                        :     47    50    52    97    98
+                                    101   108   111   115   127
+                                    135   148   176   181   192
+                                 
+char                           :     20    24    28    45    60
+                                     97    98   100   127   176
+                                 
+continue                       :    107
+create_hash_file               :     28    33    60
+define                         :     10    11    12    13    14
+                                     15
+detect                         :    129   143   144   157   158
+                                    178   189   190   193   201
+                                    202   205
+else                           :    113
+exit                           :     71    78    84   138   168
+                                    184
+filename                       :     28    60    67    70
+fopen                          :     67
+for                            :     48   141   155   187   199
+                                 
+fp                             :     29    31    33    34    35
+                                     62    67    75    81    86
+                                     87    95    97    98   111
+                                    115   127   135   143   146
+                                    147   154   157   160   161
+                                    176   181   189   198   201
+                                 
+fread                          :    143   157   189   201
+fseek                          :    135   146   154   160   181
+                                    198
+fwrite                         :     75    81   147   161
+gets                           :    104
+hash                           :     24    45   108
+hashtable                      :     64    75
+i                              :    130   141   155   162   179
+                                    187   199
+if                             :     67    75    81   107   109
+                                    135   144   158   181   190
+                                    202
+include                        :      6     7     8
+insert_record                  :     97   111   127
+insertflag                     :     29    95   103   109
+int                            :     21    24    26    29    45
+                                     95   130   179
+key                            :     20    24    45    48    50
+                                     97    98   127   132   144
+                                    148   158   162   176   190
+                                    192   202   204   210
+line                           :    100   104   106   108
+long                           :     24    45    47    97    98
+                                    101   127   176
+main                           :     26
+num                            :     21   133   193   205
+overflow                       :     65    81
+printf                         :     70    77    83   103   104
+                                    137   148   162   167   183
+                                    192   193   204   205   210
+                                 
+rand                           :    133
+record                         :     17    18
+return                         :     37    52    87   118   149
+                                    163   194   206   211
+rewind                         :     86
+search_or_insert               :     29    34    35    95
+search_record                  :     98   115   176
+size                           :     24    45    52
+sizeof                         :     75    81   135   143   146
+                                    147   154   157   160   161
+                                    181   189   198   201
+strcmp                         :    104   190   202
+strcpy                         :    132
+strtok                         :    106
+struct                         :     17    18
+temp                           :    129   132   133   147   148
+                                    161   162   178
+token                          :    100   106   107   111   115
+                                 
+typedef                        :     17
+void                           :     26    29    95    97    98
+                                    127   176
+while                          :    104
+00001 : /*********************************************************
+00002 :  Examples: 5.3
+00003 :  Hashing to Disk
+00004 :  /*********************************************************/
+00005 : 
+00006 : #include <stdio.h>
+00007 : #include <stdlib.h>  // exit
+00008 : #include <string.h>
+00009 : 
+00010 : #define FILENAME "e_5_3.dat"
+00011 : #define TABSIZE 100
+00012 : #define OFLOWSIZE 100
+00013 : #define BUCKETSIZE 4 // structs per bucket
+00014 : #define INSERT 1
+00015 : #define SEARCH 0
+00016 : 
+00017 : typedef struct record RECORD;
+00018 : struct record
+00019 : {
+00020 :     char key[50]; // a very simple record
+00021 :     int  num;     // a random number
+00022 : };
+00023 : 
+00024 : long hash ( char *key, int size);
+00025 : 
+00026 : int main(void)
+00027 : {
+00028 :     FILE *create_hash_file(char *filename);
+00029 :     void search_or_insert(FILE *fp, int insertflag);
+00030 :     
+00031 :     FILE *fp;
+00032 :     
+00033 :     fp = create_hash_file(FILENAME);
+00034 :     search_or_insert(fp, INSERT);
+00035 :     search_or_insert(fp, SEARCH);
+00036 :     
+00037 :     return 0;
+00038 : }
+00039 : 
+00040 : /*******************************************************
+00041 :  Hash formula is the same as used in Chapter 3
+00042 :     PRE: key, size
+00043 :     POST: address
+00044 :  */
+00045 : long hash ( char *key, int size)
+00046 : {
+00047 :     long address = 0;
+00048 :     for (   ; *key != '\0'; key++)
+00049 :     {
+00050 :         address += *key * *key * *key;
+00051 :     }
+00052 :     return address % size;
+00053 : }
+00054 : 
+00055 : /********************************************************
+00056 :  Create an empty hash file
+00057 :     PRE: filename
+00058 :     POST: fp
+00059 :  */
+00060 : FILE *create_hash_file(char *filename)
+00061 : {
+00062 :     FILE *fp;
+00063 :     //RECORD hashtable[TABSIZE][BUCKETSIZE] = {{"", "", "", ""}};
+00064 :     RECORD hashtable[TABSIZE][BUCKETSIZE] = {""};
+00065 :     RECORD overflow[OFLOWSIZE] = {""};
+00066 :     
+00067 :     if ((fp = fopen(filename, "w+b")) == NULL)
+00068 :     {
+00069 :         
+00070 :         printf("Could not open %s.\n", filename);
+00071 :         exit(1);
+00072 :     }
+00073 :     
+00074 :     // check for write errors just to be safe.
+00075 :     if (fwrite(&hashtable[0][0], sizeof (RECORD), TABSIZE * BUCKETSIZE, fp) < TABSIZE)
+00076 :     {
+00077 :         printf("Hash table could not be created. Abort!\n");
+00078 :         exit(2);
+00079 :     }
+00080 :     
+00081 :     if (fwrite(overflow, sizeof (RECORD), OFLOWSIZE, fp) < OFLOWSIZE)
+00082 :     {
+00083 :         printf("Could not create overflow area. Abort!\n");
+00084 :         exit(3);
+00085 :     }
+00086 :     rewind(fp);
+00087 :     return fp;
+00088 : }
+00089 : 
+00090 : /*****************************************************************
+00091 :  Hashing to disk: search or insert
+00092 :     PRE: fp, insertflag
+00093 :     POST: nothing
+00094 :  */
+00095 : void search_or_insert(FILE *fp, int insertflag)
+00096 : {
+00097 :     void insert_record(char *key, long address, FILE *fp);
+00098 :     void search_record(char *key, long address, FILE *fp);
+00099 :     
+00100 :     char line[100], *token;
+00101 :     long address;
+00102 :     
+00103 :     printf("%s\n", insertflag ? "INSERT" : "SEARCH");
+00104 :     while(printf("Enter key: "), gets(line), strcmp(line, "quit") != 0)
+00105 :     {
+00106 :         token = strtok(line, "\040\t");
+00107 :         if (!token) continue;
+00108 :         address = hash(line, 100);
+00109 :         if (insertflag)
+00110 :         {
+00111 :             insert_record(token, address, fp);
+00112 :         }
+00113 :         else
+00114 :         {
+00115 :             search_record(token, address, fp);
+00116 :         }
+00117 :     }
+00118 :     return;
+00119 : }
+00120 : 
+00121 : /******************************************************
+00122 :  Hashing to Disk: Insert
+00123 :     PRE: key, address, fp
+00124 :     POST: new item inserted if possible, otherwise 
+00125 :           error messages displayed
+00126 :  */
+00127 : void insert_record(char *key, long address, FILE *fp)
+00128 : {
+00129 :     RECORD detect, temp;
+00130 :     int i;
+00131 :     
+00132 :     strcpy(temp.key, key);
+00133 :     temp.num = rand()%99 + 5000;
+00134 :     // go to beginning of hash bucket
+00135 :     if (fseek(fp, address * BUCKETSIZE * sizeof (RECORD), SEEK_SET) != 0)
+00136 :     {
+00137 :         printf("Fatal seek error! Abort!\n");
+00138 :         exit(4);
+00139 :     }
+00140 :     // find first available slot in the bucket.
+00141 :     for (i = 0; i < BUCKETSIZE; i++)
+00142 :     {
+00143 :         fread(&detect, sizeof(RECORD), 1, fp);
+00144 :         if (*detect.key == '\0') // available slot
+00145 :         {
+00146 :             fseek(fp, -1L * sizeof(RECORD), SEEK_CUR);
+00147 :             fwrite(&temp, sizeof (RECORD), 1, fp);
+00148 :             printf("Record: %s :added to bucket %ld.\n", temp.key, address);
+00149 :             return; // nothing left to do
+00150 :         }
+00151 :     }
+00152 :     
+00153 :     // bucket full: insert into the overflow area
+00154 :     fseek(fp, TABSIZE * BUCKETSIZE * sizeof(RECORD), SEEK_SET);
+00155 :     for (i = 0; i < OFLOWSIZE; i++)
+00156 :     {
+00157 :         fread(&detect, sizeof(RECORD), 1, fp);
+00158 :         if (*detect.key == '\0') // available slot
+00159 :         {
+00160 :             fseek(fp, -1L * sizeof (RECORD), SEEK_CUR);
+00161 :             fwrite(&temp, sizeof (RECORD), 1, fp);
+00162 :             printf("Record: %s : added to the overflow slot %d.\n", temp.key, i);
+00163 :             return; // nothing left to do
+00164 :         }
+00165 :     }
+00166 :     // item not inserted!
+00167 :     printf("Hash table overflow! Abort!\n");
+00168 :     exit(5);
+00169 : }
+00170 : 
+00171 : /******************************************************
+00172 :  Hashing to Disk: Search
+00173 :     PRE: key, address, fp
+00174 :     POST: search results displayed
+00175 :  */
+00176 : void search_record(char *key, long address, FILE *fp)
+00177 : {
+00178 :     RECORD detect, temp;
+00179 :     int i;
+00180 :     
+00181 :     if (fseek(fp, address * BUCKETSIZE * sizeof (RECORD), SEEK_SET) != 0)
+00182 :     {
+00183 :         printf("Fatal seek error! Abort");
+00184 :         exit(4);
+00185 :     }
+00186 :     // find first available slot in bucket
+00187 :     for (i = 0; i < BUCKETSIZE; i++)
+00188 :     {
+00189 :         fread(&detect, sizeof (RECORD), 1, fp);
+00190 :         if (strcmp(detect.key, key) == 0) // found it!
+00191 :         {
+00192 :             printf("\t%s found \n\tat hash bucket %ld.\n", key, address);
+00193 :             printf("\tRandom number is %d\n", detect.num);
+00194 :             return; // nothing left to do
+00195 :         }
+00196 :     }
+00197 :     // check the overflow area
+00198 :     fseek(fp, TABSIZE * BUCKETSIZE * sizeof (RECORD), SEEK_SET);
+00199 :     for (i = 0; i < OFLOWSIZE; i++)
+00200 :     {
+00201 :         fread(&detect, sizeof (RECORD), 1, fp);
+00202 :         if (strcmp(detect.key, key) == 0) // found it!
+00203 :         {
+00204 :             printf("\t%s found in overflow area.\n", key);
+00205 :             printf("\tRandom number is %d\n", detect.num);
+00206 :             return; // nothing left to do
+00207 :         }
+00208 :     }
+00209 :     // not found
+00210 :     printf("Records with key: %s : not found.\n", key);
+00211 :     return;
+00212 : }
+00213 : 
