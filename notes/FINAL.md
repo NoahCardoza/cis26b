@@ -12,20 +12,20 @@ while ((linelen = getline(&line, &linecap, fp)) != -1)
     fwrite(line, linelen, 1, stdout);
 free(line);
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reads a line from stream, delimited by '\n'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '\n' is included as part of `line`, unless the end of the file is reached.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When modifying `line`, use a separate pointer to traverse line. Do not use `line` to traverse.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Remember to `free(line)` when done.
+> Reads a line from stream, delimited by '\n' <br>
+> '\n' is included as part of `line`, unless the end of the file is reached. <br>
+> When modifying `line`, use a separate pointer to traverse line. Do not use `line` to traverse. <br>
+> Remember to `free(line)` when done. <br>
 
 `int getchar()`   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get 1 character from stdin
+> Get 1 character from stdin <br>
 ```c
 int char = getchar();`
 putchar(char);
 ```
 
 `int sprintf(char * str, const char * restrict format, ...);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read from `...` to `str` according to `format`
+> Read from `...` to `str` according to `format` <br>
 
 ```c
 char buffer[50];
@@ -58,7 +58,7 @@ char* allocateString( char* inString ){
 
 #### String length
 `size_t strlen(const char* string);`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the number of characters that precede the terminating NUL character
+> the number of characters that precede the terminating NUL character <br>
 
 #### Searching in string
 ##### For 1 character
@@ -148,9 +148,9 @@ void process(FILE** fp);
 > #define FLUSH while( getchar() != '\n' )
 
 `int fscanf(FILE *restrict stream, const char *restrict format, ...);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scan from *stream* according to *format* into char* in ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scan stops when an input character does not match such a format character.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return the number of character successfully read and store in `stream`, -1 for reach EOF.
+> scan from *stream* according to *format* into char* in ... <br>
+> scan stops when an input character does not match such a format character. <br>
+> return the number of character successfully read and store in `stream`, -1 for reach EOF. <br>
 ```c
 fscanf (stdin, "%d %f", &year, &price);   // example 1
 fscanf(fpDates, "%d%*c%d%*c%d", &year, &month, &day); // %*c discard 1 char (/,-, etc)
@@ -161,44 +161,44 @@ while (fscanf(fpIn, "%c %d %d%*c", &op, &n1, &n2) != EOF )
 ```
 
 `char fgets(char *string, int numchars, FILE *fp);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `numchars` can be `sizeof(string)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read from `fp` and stops after `numchars - 1` characters are read. Retains '\n' and '\0' is put after it
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doesn't do any malloc() so pass `char s[35]` as argument
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return a pointer to the `string`.  If EOF occurs, return NULL
+> `numchars` can be `sizeof(string)` <br>
+> Read from `fp` and stops after `numchars - 1` characters are read. Retains '\n' and '\0' is put after it <br>
+> Doesn't do any malloc() so pass `char s[35]` as argument <br>
+> Return a pointer to the `string`.  If EOF occurs, return NULL <br>
 
 `ssize_t getline(char** restrict linep, size_t * restrict linecapp,FILE * restrict stream);`
 `int fgetc(FILE* fp)`   -> read 1 character
 
 `size_t fread(void* restrict ptr, size_t size, size_t nitems, FILE* restrict stream);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; reads `nitems` **objects** (array, struct, ...), each **objects** is `size` bytes long, from `stream`, storing them at the location given by `ptr`.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **`ptr` is a pointer**
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `size` is sizeof() each **object**
+> reads `nitems` **objects** (array, struct, ...), each **objects** is `size` bytes long, from `stream`, storing them at the location given by `ptr`. <br>
+> **`ptr` is a pointer** <br>
+> `size` is sizeof() each **object** <br>
 
 
 
 #### Write to file
 `int fprintf(FILE * restrict stream, const char * restrict format, ...);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Produces output to stream according to `format` and variables in ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return the number of characters printed (not including the trailing '\0')
+> Produces output to stream according to `format` and variables in ... <br>
+> Return the number of characters printed (not including the trailing '\0') <br>
 
 `int fputc(int c, FILE* fp)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; write 1 character `c` to file
+> write 1 character `c` to file <br>
 
 `int fputs(char* string, FILE* fp)`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Write `string` to a file.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doesn't append '\n' to the end of string
+> Write `string` to a file. <br>
+> Doesn't append '\n' to the end of string <br>
 
 `size_t fwrite(const void *restrict ptr, size_t size, size_t nitems, FILE *restrict stream);`
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Writes `nitems` objects, each `size` bytes long, to the `stream`, obtaining them from the location given by `ptr`.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Can be used to write to both binary and non-binary file (e.g.: .txt file). But, will write binary to non-binary file
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return 0 if read unsuccessfully, otherwise, return the number of items written.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Use `sizeof()`, size of each object, for `size` parameter
+> Writes `nitems` objects, each `size` bytes long, to the `stream`, obtaining them from the location given by `ptr`. <br>
+> Can be used to write to both binary and non-binary file (e.g.: .txt file). But, will write binary to non-binary file <br>
+> Return 0 if read unsuccessfully, otherwise, return the number of items written. <br>
+> Use `sizeof()`, size of each object, for `size` parameter <br>
 
 #### Misc.
 `int fseek(FILE *fp, long offset, int from);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set the file position, crucial for fread() and fwrite()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SEEK_SET - beginning, SEEK_END - end, SEEK_CUR - current
+> Set the file position, crucial for fread() and fwrite() <br>
+> SEEK_SET - beginning, SEEK_END - end, SEEK_CUR - current <br>
 
 ```c
 int main() {
@@ -230,13 +230,13 @@ int main() {
 ```
 
 `void rewind(FILE* fp);`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Move the file pointer to the first byte
+> Move the file pointer to the first byte <br>
 
 `long ftell(FILE* fp);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return how many bytes from the beginning of the file
+> Return how many bytes from the beginning of the file <br>
 
 `char *tmpnam(char *filename);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Create a file name that will not conflict with any  other file name on your system
+> Create a file name that will not conflict with any  other file name on your system <br>
 ```c
 char filename[L_tmpnam];    // L_tmpnam defined in stdio.h
 if (tmpnam(filename) == NULL){
@@ -246,10 +246,11 @@ if (tmpnam(filename) == NULL){
 printf("\nFilename obtained is: %s\n\n", filename);
 ```
 `int rename(const char *oldFilename, const char *newFilename);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rename file from `oldFilename` to `newFilename`. Return 0 if renaming is successful
+> Rename file from `oldFilename` to `newFilename`. <br>
+> Return 0 if renaming is successful. <br>
 
 `int remove(const char *fileName);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Delete a file. Return 0 if success
+> Delete a file. Return 0 if success <br>
 ## Void Pointer
 The void pointer can be used with any pointer, and any pointer can be assigned to a void pointer.
 
