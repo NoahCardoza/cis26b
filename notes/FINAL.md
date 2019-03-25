@@ -133,15 +133,15 @@ void file_open(FILE** fp1, FILE** fp2);
 void process(FILE** fp);  
 ```
 
-"r"  - read text data
-"w"  - write text data. Overwrite file if file exists
-"a"  - append text.
-"rb" - read binary data
-"wb" - write binary data
-"ab" - append binary data to existing binary file
-"r+b" – read and write an existing binary file. Doesn't create a new file
-"w+b" – read and write a new binary file. Create a new file if it does't exist. Overwrite existing file
-"a+b" – read and append binary data to existing binary file
++ "r"  - read text data
++ "w"  - write text data. Overwrite file if file exists
++ "a"  - append text.
++ "rb" - read binary data
++ "wb" - write binary data
++ "ab" - append binary data to existing binary file
++ "r+b" – read and write an existing binary file. Doesn't create a new file
++ "w+b" – read and write a new binary file. Create a new file if it does't exist. Overwrite existing file
++ "a+b" – read and append binary data to existing binary file
 
 ### Process
 #### Read from file
