@@ -1,13 +1,64 @@
 ## STRING
 > #include <string.h>
+
+#### Input/Read to string
+`ssize_t getline(char ** restrict linep, size_t * restrict linecapp, FILE * restrict stream);`
+
+```c
+char *line = NULL;
+size_t linecap = 120; // max buffer
+ssize_t linelen;
+while ((linelen = getline(&line, &linecap, fp)) != -1)
+    fwrite(line, linelen, 1, stdout);
+free(line);
+```
+> Reads a line from stream, delimited by '\n' <br>
+> '\n' is included as part of `line`, unless the end of the file is reached. <br>
+> When modifying `line`, use a separate pointer to traverse line. Do not use `line` to traverse. <br>
+> Remember to `free(line)` when done. <br>
+
+`int getchar()`   
+> Get 1 character from stdin <br>
+```c
+int char = getchar();`
+putchar(char);
+```
+
+`int sprintf(char * str, const char * restrict format, ...);`
+> Read from `...` to `str` according to `format` <br>
+
+```c
+char buffer[50];
+int a = 10, b = 20, c = 30;
+sprintf(buffer, "Sum of %d and %d is %d", a, b, c);
+printf("%s", buffer);     // Sum of 10 and 20 is 30
+```
+
+
+#### Output/Display String content
+`int puts(char *string)`  --> Write `string` to screen
+
+
+
 #### Copy Strings
 `char* stpcpy(char* dst, const char* src);`
 `char* stpncpy(char* dst, const char* src, size_t len);`
 
+```c
+char* allocateString( char* inString ){
+    char* outString;
+    int   stringSize = strlen( inString ) + 1;
+
+    outString = (char*) calloc (stringSize, sizeof (char));
+    if ( outString == NULL)    EXIT_MEM;
+    strcpy (outString, inString);
+    return outString;
+}
+```
 
 #### String length
 `size_t strlen(const char* string);`  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; the number of characters that precede the terminating NUL character
+> the number of characters that precede the terminating NUL character <br>
 
 #### Searching in string
 ##### For 1 character
@@ -29,12 +80,17 @@
 #### Converting Numeric Strings to Numbers
 `long strtol(const char *restrict str, char **restrict endptr, int base);`   (example in book)
 
-
+#### Lowercase/uppercase a string
+```c
+#include <ctype.h>
+for (char* p = str; *p; ++p) *p = tolower(*p);
+for (char* p = str; *p; ++p) *p = toupper(*p);
+```
 ## ARRAYS
 
 
 ##### Copy from array src to array dst
-`void* memcpy(void *dst, const void *src, size_t n);`
+`void* memcpy(void* dst, const void* src, size_t n);`
 
 ```c
 int a[10] = {10, 10, 10, 999, 999, 999, 999};
@@ -46,19 +102,7 @@ memcpy(d, a + 3, 4 * sizeof(int)); // copy four 9999
 
 
 
-## IO
 
-`ssize_t getline(char ** restrict linep, size_t * restrict linecapp, FILE * restrict stream);`
-
-```c
-char *line = NULL;
-size_t linecap = 120; // max buffer
-ssize_t linelen;
-while ((linelen = getline(&line, &linecap, fp)) > 0){
-    fwrite(line, linelen, 1, stdout);
-  }
-```
-While using getline() to read from input, do not manipulate line. Use another pointer to move inside the line because getline() has to free memory allocated and pointed to by line.
 
 ## FILE
 
@@ -66,67 +110,147 @@ While using getline() to read from input, do not manipulate line. Use another po
 ```c
 #include <stdio.h>
 #include <stdlib.h>
-FILE *fp = = fopen( "DATA.TXT", "r");
-if ( fp == NULL ){
-    printf ("Error opening for reading");
-    exit(101);
-}
-// Process
+#define ERROR_OPEN    puts("Error opening file."); exit(101);
+FILE* fp = fopen( "DATA.TXT", "r");
+if ( !fp ) ERROR_OPEN
+
+// Code to process file
 if ( fclose( fp) == EOF ){
     printf ("Error closing!");
     exit(201);
 }
 ```
+
+
+```c
+int main(){
+  FILE* fp1, *fp2;
+  file_open(&fp1, &fp2);
+  process(&fp);
+
+}
+void file_open(FILE** fp1, FILE** fp2);
+void process(FILE** fp);  
+```
+
 "r"  - read text data
 "w"  - write text data. Overwrite file if file exists
 "a"  - append text.
 "rb" - read binary data
 "wb" - write binary data
 "ab" - append binary data to existing binary file
-"r+b" – read and write an existing binary file
-"w+b" – read and write a new binary file
+"r+b" – read and write an existing binary file. Doesn't create a new file
+"w+b" – read and write a new binary file. Create a new file if it does't exist. Overwrite existing file
 "a+b" – read and append binary data to existing binary file
 
 ### Process
 #### Read from file
+> #define FLUSH while( getchar() != '\n' )
+
 `int fscanf(FILE *restrict stream, const char *restrict format, ...);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbspm;&nbsp; scan from *stream* according to *format* into char* in ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; scan stops when an input character does not match such a format character.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return the number of input items assigned
+> scan from *stream* according to *format* into char* in ... <br>
+> scan stops when an input character does not match such a format character. <br>
+> return the number of character successfully read and store in `stream`, -1 for reach EOF. <br>
 ```c
 fscanf (stdin, "%d %f", &year, &price);   // example 1
+fscanf(fpDates, "%d%*c%d%*c%d", &year, &month, &day); // %*c discard 1 char (/,-, etc)
 while (fscanf(fpIn, "%c %d %d%*c", &op, &n1, &n2) != EOF )
-{ ... }     // *c to discard '\n'   // example 2
+{ ... ; FLUSH; }     // *c to discard '\n'   // example 2
+
+
 ```
+
 `char fgets(char *string, int numchars, FILE *fp);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `numchars` can be `sizeof(string)`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read from `fp` and stops after `numchars - 1` characters are read. Retains '\n' and '\0' is put after it
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Doesn't do any malloc() so pass `char s[35]` as argument
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Return a pointer to the `string`.  If EOF occurs, return NULL
+> `numchars` can be `sizeof(string)` <br>
+> Read from `fp` and stops after `numchars - 1` characters are read. Retains '\n' and '\0' is put after it <br>
+> Doesn't do any malloc() so pass `char s[35]` as argument <br>
+> Return a pointer to the `string`.  If EOF occurs, return NULL <br>
 
 `ssize_t getline(char** restrict linep, size_t * restrict linecapp,FILE * restrict stream);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reads a line from stream, delimited by '\n'
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '\n' is included as part of the line, unless the end of the file is reached.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return the number of characters written, excluding the terminating NUL character.  The value -1 is
-returned if an error occurs, or if end-of-file is reached.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if modifying line, use a separate pointer to traverse line.
+`int fgetc(FILE* fp)`   -> read 1 character
 
-```c
-char *line = NULL;
-size_t linecap = 120; // max buffer capacity
-while ( (getline(&line, &linecap, fp)) > 0){
-      printf("%s\n", line);
-}
-```
+`size_t fread(void* restrict ptr, size_t size, size_t nitems, FILE* restrict stream);`
+> reads `nitems` **objects** (array, struct, ...), each **objects** is `size` bytes long, from `stream`, storing them at the location given by `ptr`. <br>
+> **`ptr` is a pointer** <br>
+> `size` is sizeof() each **object** <br>
 
 
 
 #### Write to file
 `int fprintf(FILE * restrict stream, const char * restrict format, ...);`
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; produces output to stream according to a format and variables in ...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return the number of characters printed (not including the trailing `\0')
+> Produces output to stream according to `format` and variables in ... <br>
+> Return the number of characters printed (not including the trailing '\0') <br>
 
+`int fputc(int c, FILE* fp)`
+> write 1 character `c` to file <br>
 
+`int fputs(char* string, FILE* fp)`  
+> Write `string` to a file. <br>
+> Doesn't append '\n' to the end of string <br>
+
+`size_t fwrite(const void *restrict ptr, size_t size, size_t nitems, FILE *restrict stream);`
+
+> Writes `nitems` objects, each `size` bytes long, to the `stream`, obtaining them from the location given by `ptr`. <br>
+> Can be used to write to both binary and non-binary file (e.g.: .txt file). But, will write binary to non-binary file <br>
+> Return 0 if read unsuccessfully, otherwise, return the number of items written. <br>
+> Use `sizeof()`, size of each object, for `size` parameter <br>
+
+#### Misc.
+`int fseek(FILE *fp, long offset, int from);`
+> Set the file position, crucial for fread() and fwrite() <br>
+> SEEK_SET - beginning, SEEK_END - end, SEEK_CUR - current <br>
+
+```c
+int main() {
+   int i[] = {1, 2, 3, 4, 5}, j[5], k;
+   FILE* fp = fopen("out.txt", "w+b");
+   fwrite(i, sizeof(int), 5, fp); // write an array of 5 int to out.txt
+   rewind(fp);
+
+   fseek(fp,  2 * sizeof (int), SEEK_SET); // points to 3
+   fread(&k, sizeof(int), 1, fp);
+   printf("%d\n", k);                      // 3
+   fseek(fp, -1 * sizeof(int), SEEK_CUR);
+
+   fseek(fp,  2 * sizeof (int), SEEK_CUR); // points to 5
+   fseek(fp, -3 * sizeof (int), SEEK_CUR); // points to 2
+   fseek(fp, -1 * sizeof (int), SEEK_END); // points to 5
+
+   // append one item to file
+   int item = 6;
+   fseek(fp, 0, SEEK_END);
+   fwrite(&item, sizeof(int), 1, fp);
+
+   // calculate the number of records in the file
+   fseek(fp, 0, SEEK_END);
+   long pos = ftell(fp);
+   printf("\nThere are %ld records in this file.\n", pos/sizeof(RECORD) );
+
+   fclose(fp);
+```
+
+`void rewind(FILE* fp);`  
+> Move the file pointer to the first byte <br>
+
+`long ftell(FILE* fp);`
+> Return how many bytes from the beginning of the file <br>
+
+`char *tmpnam(char *filename);`
+> Create a file name that will not conflict with any  other file name on your system <br>
+```c
+char filename[L_tmpnam];    // L_tmpnam defined in stdio.h
+if (tmpnam(filename) == NULL){
+    printf("Could not get non-conflicting  filename.\n");
+    exit(1);
+}
+printf("\nFilename obtained is: %s\n\n", filename);
+```
+`int rename(const char *oldFilename, const char *newFilename);`
+> Rename file from `oldFilename` to `newFilename`. <br>
+> Return 0 if renaming is successful. <br>
+
+`int remove(const char *fileName);`
+> Delete a file. Return 0 if success <br>
 ## Void Pointer
 The void pointer can be used with any pointer, and any pointer can be assigned to a void pointer.
 
@@ -235,7 +359,30 @@ int compare(const void* part1, const void* part2){
     else if (strcmp(p1->partname, p2->partname) < 0) return -1;
     else return 0;
 }
+```
 
+## INSERTION SORT
+Example:
+```c
+void insertionSort (CIS_CLASSES  list[], CIS_CLASSES *pLast)
+{
+	CIS_CLASSES  temp;
+	CIS_CLASSES *pCurr;
+	CIS_CLASSES *pWalk;
+
+	for (pCurr = list + 1; pCurr <= pLast; pCurr++)
+    {
+	   temp    = *pCurr;
+	   pWalk = pCurr - 1;
+       while (pWalk >= list && strcmp(temp.course, pWalk->course) < 0)
+       {
+             *(pWalk + 1) = *pWalk;
+	          pWalk--;
+	   }
+	   *(pWalk + 1)  = temp;
+    }
+
+}
 ```
 
 ## Bit
