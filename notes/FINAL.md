@@ -451,5 +451,36 @@ int main( int argc, char* argv[])
 }
 ```
 
+## Vardic Functions
+
+```c
+#include <stdagr.h>
+void run_funcs(int foo, ...) {
+    EXE *cmd;
+    va_list args;
+    va_start(args, foo);
+
+    while ((cmd = va_arg(args, EXE*)), cmd)
+        printf("%d ", (*cmd->fn)(cmd->i));
+
+    va_end(args);
+}
+```
+
+## Time
+
+```c
+#include <time.h>
+
+struct tm   *ptime;
+time_t       vtime;
+char         buffer[80];
+
+time(&vtime);
+ptime = localtime(&vtime);
+strftime(buffer, 80, "%A, %B %d, %T, %Y", ptime);
+```
+
+
 ## cdecl
 Neat program in command line to translate C code to human language
